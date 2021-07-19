@@ -8197,7 +8197,16 @@ a.btn-theme.active {
 .alert {
   position: relative;
   padding: 15px 20px;
-  border-radius: 0;
+  border-radius: 0.25rem;
+}
+
+.alert {
+  color: #f0f0f0;
+  border-color: #444444;
+  background-color: #333333;
+}
+.alert:hover {
+  border-color: #04a9f5;
 }
 
 /* Provide class for links that match alerts */
