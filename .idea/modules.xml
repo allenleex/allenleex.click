@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../Python/Workspaces/AI-ChatBot-master/.idea/AI-ChatBot-master.iml" filepath="$PROJECT_DIR$/../../Python/Workspaces/AI-ChatBot-master/.idea/AI-ChatBot-master.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/github.iml" filepath="$PROJECT_DIR$/.idea/github.iml" />
     </modules>
   </component>

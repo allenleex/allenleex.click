@@ -60,9 +60,9 @@ File: style.css
 body {
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
-  color: #888;
+  color: #f0f0f0;
   font-weight: 400;
-  background: #f4f7fa;
+  background: #222222;
   position: relative;
 }
 
@@ -70,7 +70,12 @@ body {
   outline: none;
 }
 
+a {
+    color: #04a9f5;
+}
+
 a:hover {
+  color: #04a9f5;
   outline: none;
   text-decoration: none;
 }
@@ -81,7 +86,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: #111;
+  color: #e0e0e0;
   font-weight: 400;
 }
 
@@ -185,13 +190,15 @@ p.text-muted {
 }
 
 .card {
-  border-radius: 0;
+  border-radius: 10px 10px;
   -webkit-box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
           box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
   border: none;
   margin-bottom: 30px;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
+  color: #f0f0f0;
+  background: #333333;
 }
 .card .card-header {
   background-color: transparent;
@@ -201,7 +208,7 @@ p.text-muted {
 }
 .card .card-header h5 {
   margin-bottom: 0;
-  color: #000;
+  color: #f0f0f0;
   font-size: 17px;
   font-weight: 400;
   display: inline-block;
@@ -304,6 +311,9 @@ p.text-muted {
 .card.full-card {
   z-index: 99999;
   border-radius: 0;
+}
+.card h3 {
+  color: #f0f0f0;
 }
 
 /* ==========  scrollbar End  =========== */
@@ -6898,13 +6908,16 @@ pre[class*=language-]:after, pre[class*=language-]:before {
 ==========================  **/
 .custom-select,
 .form-control {
-  background: #f4f7fa;
+  background: #333333;
+  color: #f0f0f0;
   padding: 10px 20px;
   font-size: 14px;
+  border: 1px solid #555555;
 }
 .custom-select:focus,
 .form-control:focus {
-  background: #f4f7fa;
+  background: #444444;
+  color: #f0f0f0;
 }
 .custom-select::-moz-placeholder,
 .form-control::-moz-placeholder {
@@ -6922,7 +6935,7 @@ pre[class*=language-]:after, pre[class*=language-]:before {
 
 /* input group start */
 .input-group {
-  background: #f4f7fa;
+  background: #333333;
 }
 .input-group .input-group-text {
   padding-left: 15px;
@@ -7276,24 +7289,24 @@ select.form-control-lg:not([size]):not([multiple]) {
 ==========================  **/
 .table td,
 .table th {
-  border-top: 1px solid #eaeaea;
+  border-top: 1px solid #555555;
   white-space: nowrap;
   padding: 1.05rem 0.75rem;
 }
 .table thead th {
-  border-bottom: 1px solid #eaeaea;
+  border-bottom: 1px solid #555555;
 }
 .table tbody + tbody {
-  border-top: 2px solid #eaeaea;
+  border-top: 2px solid #555555;
 }
 
 /* Border versions */
 .table-bordered {
-  border: 1px solid #eaeaea;
+  border: 1px solid #555555;
 }
 .table-bordered td,
 .table-bordered th {
-  border: 1px solid #eaeaea;
+  border: 1px solid #555555;
 }
 
 /* Zebra-striping */
@@ -7405,7 +7418,7 @@ table.footable-paging-center > tfoot > tr.footable-paging > td {
 }
 .auth-wrapper a,
 .auth-wrapper p > a {
-  color: #111;
+  color: #f0f0f0;
   font-weight: 600;
 }
 .auth-wrapper .btn-auth-gen .btn-icon {
@@ -8300,8 +8313,8 @@ a.btn-theme.active {
 ==========================  **/
 /* Breadcrumbs */
 .breadcrumb {
-  background-color: #f4f7fa;
-  border-radius: 0;
+  background-color: #444444;
+  border-radius: .25rem;
 }
 
 .breadcrumb-item + .breadcrumb-item {
@@ -8311,7 +8324,7 @@ a.btn-theme.active {
   /* content: $breadcrumb-divider; */
 }
 .breadcrumb-item.active {
-  color: #111;
+  color: #f0f0f0;
 }
 
 /* pagination */
@@ -8558,7 +8571,8 @@ a.btn-theme.active {
 .nav-tabs .nav-item.show .nav-link,
 .nav-tabs .nav-link.active {
   border: none;
-  color: #111;
+  color: #04a9f5;
+  background: #444444;
   -webkit-box-shadow: 0 -3px 10px 0 rgba(0, 0, 0, 0.05);
           box-shadow: 0 -3px 10px 0 rgba(0, 0, 0, 0.05);
 }
@@ -8566,7 +8580,8 @@ a.btn-theme.active {
 /* =======================   Pills ================== */
 .nav-pills {
   padding: 15px;
-  background-color: #fff;
+  background-color: #333333;
+  border-radius:
   -webkit-box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.05);
           box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.05);
 }
@@ -8602,7 +8617,7 @@ a.btn-theme.active {
 /* Hide tabbable panes to start, show them when `.active` */
 .tab-content {
   padding: 35px 30px;
-  background: #fff;
+  background: #444444;
   -webkit-box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.05);
           box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.05);
 }
@@ -9420,7 +9435,7 @@ div.code-toolbar > .toolbar span:hover {
   font-weight: 500;
   min-width: 100px;
   text-align: center;
-  color: #555555;
+  color: #f0f0f0;
   position: relative;
   display: block;
   padding: 11px 15px;
