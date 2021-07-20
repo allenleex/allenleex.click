@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../../Python/Workspaces/AI-ChatBot-master/.idea/AI-ChatBot-master.iml" filepath="$PROJECT_DIR$/../../Python/Workspaces/AI-ChatBot-master/.idea/AI-ChatBot-master.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/github.iml" filepath="$PROJECT_DIR$/.idea/github.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../Python/Workspaces/jieba/.idea/jieba.iml" filepath="$PROJECT_DIR$/../../Python/Workspaces/jieba/.idea/jieba.iml" />
     </modules>
   </component>
 </project>

@@ -1,0 +1,67 @@
+{% extends "layouts/base-fullscreen.html" %}
+
+{% block title %} Login {% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div style="margin-top: 200px;"></div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="">
+                <div class="form-group">
+<!--                    <label>Let's talk somthing ...</label>-->
+                    <input id="keyword" type="text" class="form-control" placeholder="">
+                    <div class="custom-control custom-checkbox" style="margin-top: 10px; margin-left: 10px;">
+                        <input type="checkbox" class="custom-control-input" id="customCheck1">
+                        <label class="custom-control-label" for="customCheck1">过滤无意义的字词</label>
+                    </div>
+                </div>
+                <div id="tags" class="form-group"></div>
+            </div>
+        </div>
+        <div class="col-md-6">
+        </div>
+    </div>
+</div>
+
+<script>
+var url = "/api/words";
+
+/*****
+$("#keyword").keyup(function(){
+    json = $.ajax({url:url,async:false});
+    if(json) {
+        var data = json.responseJSON.data;
+        if(data){
+            $("#tags").empty();
+            for(i in data) {
+                $("#tags").append('<span class="badge badge-light">' + data[i] + '</span>');
+            }
+        }
+    }
+});
+*****/
+
+$("#keyword").keyup(function(){
+    json = $.post(
+        url,
+        { keyword:$("#keyword").val() },
+        function(json,status){
+            console.log(json);
+            var data = json.data;
+            if(data){
+                $("#tags").empty();
+                for(i in data) {
+                    $("#tags").append('<span class="badge">' + data[i] + '</span>');
+                }
+            }
+        }
+    );
+
+});
+
+</script>
+
+
+{% endblock content %}

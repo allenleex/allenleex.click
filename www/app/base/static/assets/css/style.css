@@ -122,6 +122,14 @@ strong {
   font-weight: 400;
 }
 
+.badge {
+    margin-top: 0.5rem;
+    margin-right: 0.5rem;
+    padding: 0.5rem 0.5rem;
+    background: #444444;
+    cursor: pointer;
+}
+
 .img-radius {
   border-radius: 50%;
 }
