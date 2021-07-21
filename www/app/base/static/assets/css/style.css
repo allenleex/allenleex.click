@@ -8211,7 +8211,6 @@ a.btn-theme.active {
 .alert {
   color: #f0f0f0;
   border-color: #444444;
-  background-color: #333333;
 }
 .alert:hover {
   border-color: #04a9f5;
@@ -10629,4 +10628,24 @@ div.code-toolbar > .toolbar span:hover {
 		-webkit-box-shadow: 0 0 0 0 rgba(4, 169, 245, 0);
 		box-shadow: 0 0 0 0 rgba(4, 169, 245, 0)
 	}
+}
+
+/** Custom Styles **/
+
+#chatroom-wrapper {
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.fixed-bottom {
+    position: fixed;
+    bottom: 30px;
+}
+
+.alert.chat {
+    background: #333333;
+    border: 1px solid #444444;
+    color: #f0f0f0;
+    padding: 5px 15px;
+    border-radius: 10px 10px;
 }

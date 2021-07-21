@@ -5,48 +5,43 @@
 {% block content %}
 
 <div class="container">
-    <div style="margin-top: 200px;"></div>
+    <div class="row" style="margin-top: 80px;">
+        <div class="col-md-3 text-left"></div>
+        <div class="col-md-6 text-left" id="chatroom-wrapper">
+            <div id="chatroom"></div>
+        </div>
+        <div class="col-md-3 text-left">
+            <div id="tags" class="form-group"></div>
+        </div>
+    </div>
+</div>
+
+<div class="container fixed-bottom">
     <div class="row">
-        <div class="col-md-6">
-            <div class="">
-                <div class="form-group">
-<!--                    <label>Let's talk somthing ...</label>-->
-                    <input id="keyword" type="text" class="form-control" placeholder="">
-                    <div class="custom-control custom-checkbox" style="margin-top: 10px; margin-left: 10px;">
-                        <input type="checkbox" class="custom-control-input" id="customCheck1">
-                        <label class="custom-control-label" for="customCheck1">过滤无意义的字词</label>
-                    </div>
-                </div>
-                <div id="tags" class="form-group"></div>
+        <div class="col-md-3 text-center"></div>
+        <div class="col-md-6 text-left">
+            <div class="form-group">
+                <input id="keyword" type="text" class="form-control" placeholder="输入一段话" autocomplete="off" value="">
+                <!--                    <div class="custom-control custom-checkbox" style="margin-top: 10px; margin-left: 10px;">-->
+                <!--                        <input type="checkbox" class="custom-control-input" id="customCheck1">-->
+                <!--                        <label class="custom-control-label" for="customCheck1">过滤无意义的字词</label>-->
+                <!--                    </div>-->
             </div>
         </div>
-        <div class="col-md-6">
-        </div>
+        <div class="col-md-3 text-center"></div>
     </div>
 </div>
 
 <script>
 var url = "/api/words";
 
-/*****
-$("#keyword").keyup(function(){
-    json = $.ajax({url:url,async:false});
-    if(json) {
-        var data = json.responseJSON.data;
-        if(data){
-            $("#tags").empty();
-            for(i in data) {
-                $("#tags").append('<span class="badge badge-light">' + data[i] + '</span>');
-            }
-        }
-    }
-});
-*****/
+function jieba() {
+    var k = $.trim($("#keyword").val());
+    if(k=='') return false;
 
-$("#keyword").keyup(function(){
     json = $.post(
         url,
-        { keyword:$("#keyword").val() },
+        { keyword: k },
         function(json,status){
             console.log(json);
             var data = json.data;
@@ -58,8 +53,61 @@ $("#keyword").keyup(function(){
             }
         }
     );
+}
 
+function autoHeight() {
+    var h = $(window).height();
+    if (h > 100) {
+        $("#chatroom-wrapper").css('height', h-200);
+    } else {
+        return false;
+    }
+}
+
+
+$(document).ready(function(){
+    autoHeight();
+    $(window).resize(autoHeight);
+    focus();
 });
+
+$(document).keyup(function(e){
+  if(e.keyCode==13){
+    var k = $.trim($("#keyword").val());
+    if(k=='') return false;
+    jieba();
+    post($("#keyword").val(),0);
+    post("知道了",1);
+    focus();
+  }
+});
+
+$("#keyword").change(function(){
+    // jieba();
+});
+
+$("#keyword").keyup(function(){
+    // jieba();
+});
+
+function post(str="...", type=0) {
+    // .............
+    var s = $.trim(str);
+    if(s=='') return false;
+
+    // .............
+    var p = '';
+    if( type==0 )
+        p = '<div class="alert alert-dark chat" role="alert" style="width:80%;float:left;">' + s + '</div>';
+    else
+        p = '<div class="alert alert-dark chat" role="alert" style="width:80%;float:right;">' + s + '</div>';
+    $("#chatroom").prepend(p);
+    $("#keyword").val('');
+}
+
+function focus() {
+    $("#keyword").focus();
+}
 
 </script>
 
