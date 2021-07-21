@@ -33,14 +33,15 @@
 </div>
 
 <script>
-var url = "/api/words";
+var urlWords = "/api/words";
+var urlTalk = "/api/talk";
 
 function jieba() {
     var k = $.trim($("#keyword").val());
     if(k=='') return false;
 
     json = $.post(
-        url,
+        urlWords,
         { keyword: k },
         function(json,status){
             console.log(json);
@@ -48,8 +49,22 @@ function jieba() {
             if(data){
                 $("#tags").empty();
                 for(i in data) {
-                    $("#tags").append('<span class="badge">' + data[i] + '</span>');
+                    $("#tags").append('<button class="badge">' + data[i] + '</button>');
                 }
+            }
+        }
+    );
+}
+
+function answer(question) {
+    json = $.post(
+        urlTalk,
+        { question: question },
+        function(json,status){
+            console.log(json);
+            var data = json.data;
+            if(data){
+                post(data, 1);
             }
         }
     );
@@ -76,8 +91,8 @@ $(document).keyup(function(e){
     var k = $.trim($("#keyword").val());
     if(k=='') return false;
     jieba();
-    post($("#keyword").val(),0);
-    post("知道了",1);
+    post(k, 0);
+    answer(k);
     focus();
   }
 });

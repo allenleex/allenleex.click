@@ -7,6 +7,8 @@ from flask import jsonify, render_template, redirect, request, url_for
 from app.api import blueprint
 import jieba
 import re
+# from chatterbot import ChatBot
+# from chatterbot.trainers import ChatterBotCorpusTrainer
 
 
 @blueprint.route('/api/test')
@@ -36,7 +38,9 @@ def words():
 def get_stopwords_list():
     # stopwords = [line.strip() for line in open('stopwords.txt', encoding='UTF-8').readlines()]
     stopwords = [
-        "，", "。", " ", "？", "！", "~", "…", "、", "：", "；", "你", "我", "他", "她", ",", ".", ":", "?", "!", ";", "|", "/", "\\"
+        "，", "。", " ", "？", "！", "~", "…", "、", "：", "；", "‘", "“", "（", "）", "￥",
+        ",", ".", ":", "?", "!", ";", "|", "/", "\\", "'", "\"", "_", "(", ")", "@", "#", "$", "^",
+        "你", "我", "他", "她"
     ]
     return stopwords
 
@@ -66,3 +70,18 @@ def move_stopwords(sentence_list, stopwords_list):
             if word != '\t':
                 out_list.append(word)
     return out_list
+
+
+#
+# @blueprint.route('/api/talk', methods=['POST'])
+# def bot_response(question):
+#     question = request.form['question']
+#     chatbot = ChatBot('Ron Obvious')
+#     # Create a new trainer for the chatbot
+#     trainer = ChatterBotCorpusTrainer(chatbot)
+#     # Train the chatbot based on the english corpus
+#     trainer.train("chatterbot.corpus.english")
+#     # Get a response to an input statement
+#     answer = chatbot.get_response(question)
+#
+#     return answer
