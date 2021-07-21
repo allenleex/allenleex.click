@@ -5,6 +5,7 @@ Copyright (c) 2019 - present AppSeed.us
 
 from flask import jsonify, render_template, redirect, request, url_for
 from app.api import blueprint
+import os
 import jieba
 import re
 # from chatterbot import ChatBot
@@ -36,12 +37,15 @@ def words():
 
 # 创建停用词列表
 def get_stopwords_list():
-    # stopwords = [line.strip() for line in open('stopwords.txt', encoding='UTF-8').readlines()]
-    stopwords = [
-        "，", "。", " ", "？", "！", "~", "…", "、", "：", "；", "‘", "“", "（", "）", "￥",
-        ",", ".", ":", "?", "!", ";", "|", "/", "\\", "'", "\"", "_", "(", ")", "@", "#", "$", "^",
-        "你", "我", "他", "她"
-    ]
+    stopwords = [line.strip() for line in open('stopwords.txt', encoding='UTF-8').readlines()]
+
+    # stopwords = [
+    #     "，", "。", " ", "？", "！", "~", "…", "、", "：", "；", "‘", "“", "（", "）", "￥",
+    #     ",", ".", ":", "?", "!", ";", "|", "/", "\\", "'", "\"", "_", "(", ")", "@", "#", "$", "^",
+    #     "你", "我", "他", "她"
+    # ]
+    # print(stopwords)
+
     return stopwords
 
 
