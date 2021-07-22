@@ -12,6 +12,11 @@ import re
 # from chatterbot.trainers import ChatterBotCorpusTrainer
 
 
+jieba.load_userdict("userdict.txt")
+jieba.add_word('石墨烯')
+jieba.add_word('凱特琳')
+jieba.del_word('自定义词')
+
 @blueprint.route('/api/test')
 def test():
     return 'test api'
@@ -25,10 +30,10 @@ def words():
         stopwords = get_stopwords_list()
         sentence_depart = seg_depart(sentence)
         sentence_depart = move_stopwords(sentence_depart, stopwords)
-        print(sentence_depart)
+        # print(sentence_depart)
     else:
         seg_list = jieba.lcut("这是一段测试文字")
-        print(seg_list)
+        # print(seg_list)
 
     return jsonify({
         "data": sentence_depart
@@ -38,13 +43,6 @@ def words():
 # 创建停用词列表
 def get_stopwords_list():
     stopwords = [line.strip() for line in open('stopwords.txt', encoding='UTF-8').readlines()]
-
-    # stopwords = [
-    #     "，", "。", " ", "？", "！", "~", "…", "、", "：", "；", "‘", "“", "（", "）", "￥",
-    #     ",", ".", ":", "?", "!", ";", "|", "/", "\\", "'", "\"", "_", "(", ")", "@", "#", "$", "^",
-    #     "你", "我", "他", "她"
-    # ]
-    # print(stopwords)
 
     return stopwords
 

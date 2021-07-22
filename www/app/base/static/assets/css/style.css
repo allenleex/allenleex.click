@@ -10633,7 +10633,7 @@ div.code-toolbar > .toolbar span:hover {
 /** Custom Styles **/
 
 #chatroom-wrapper {
-    padding: 10px;
+    padding: 10px 20px 10 0px;
     overflow-y: auto;
 }
 
@@ -10642,12 +10642,47 @@ div.code-toolbar > .toolbar span:hover {
     bottom: 30px;
 }
 
-.alert.chat {
+.chat-row {
+    display: block;
+    width: 100%;
+    height: auto;
+    min-height: 35px;
+    margin-bottom: 5px;
+}
+
+.chat {
     background: #333333;
     border: 1px solid #444444;
     color: #f0f0f0;
     padding: 5px 15px;
-    border-radius: 10px 10px;
+    margin-bottom: 5px;
+    max-width: 50%;
+    cursor: pointer;
+}
+
+.chat:hover {
+    border: 1px solid #04a9f5;
+}
+
+.chat.left {
+    float: left;
+    max-width: 50%;
+    min-width: 10%;
+    border-radius: 0px 10px 0px 10px;
+}
+
+.chat.right {
+    float: right;
+    max-width: 50%;
+    min-width: 10%;
+    border-radius: 10px 0px 10px 0px;
+}
+
+.chat .alert {
+    background: transparent;
+    border: 1px solid #444444;
+    color: #f0f0f0;
+    padding: 5px 15px;
 }
 
 button.badge {
