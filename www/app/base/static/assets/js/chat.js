@@ -122,11 +122,13 @@ function post(str="...", type=0) {
 
     // .............
     var p = '';
+    var c = '<div class="clear"></div>';
     if( type==0 )
         p = '<div class="chat-row"><div class="chat left">' + s + '</div></div>';
     else
         p = '<div class="chat-row"><div class="chat right">' + s + '</div></div>';
     $("#chatroom").prepend(p);
+    $("#chatroom").prepend(c);
     $("#keyword").val('');
 }
 

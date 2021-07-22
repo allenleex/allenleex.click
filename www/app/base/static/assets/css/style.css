@@ -10648,10 +10648,7 @@ div.code-toolbar > .toolbar span:hover {
 }
 
 .chat-row {
-    display: block;
     width: 100%;
-    height: auto;
-    min-height: 35px;
     margin-bottom: 5px;
 }
 
@@ -10672,14 +10669,12 @@ div.code-toolbar > .toolbar span:hover {
 .chat.left {
     float: left;
     max-width: 50%;
-    min-width: 10%;
     border-radius: 0px 10px 0px 10px;
 }
 
 .chat.right {
     float: right;
     max-width: 50%;
-    min-width: 10%;
     border-radius: 10px 0px 10px 0px;
 }
 
@@ -10701,4 +10696,12 @@ button.badge:hover {
 
 button.badge:focus {
     border: none;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.clear {
+    clear:both;
 }
