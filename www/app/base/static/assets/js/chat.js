@@ -1,5 +1,6 @@
 var urlWords = "/api/words";
 var urlTalk = "/api/talk";
+var urlNum = '/api/num/tingyongci';
 
 function jieba() {
     var k = $.trim($("#keyword").val());
@@ -101,10 +102,8 @@ function focus() {
 }
 
 function getNumbers() {
-    var url = '/api/num/tingyongci';
-
-    $.get(url,function(data,status){
-        $("#num_tingyongci").html(data);
+    $.get(urlNum,function(data,status){
+        $("#num_tingyongci").html(data.stopwords);
     });
 }
 

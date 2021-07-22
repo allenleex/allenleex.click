@@ -91,6 +91,9 @@ def move_stopwords(sentence_list, stopwords_list):
 
 @blueprint.route('/api/num/tingyongci')
 def num_tingyongci():
+    stopwords = str(len(get_stopwords_list()))
 
-    return "123"
+    return jsonify({
+        "stopwords": stopwords
+    })
 
