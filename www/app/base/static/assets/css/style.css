@@ -10632,14 +10632,19 @@ div.code-toolbar > .toolbar span:hover {
 
 /** Custom Styles **/
 
+.fixed-bottom {
+    position: fixed;
+    left: 264px;
+    bottom: 30px;
+}
+
 #chatroom-wrapper {
     padding: 10px 20px 10 0px;
     overflow-y: auto;
 }
 
-.fixed-bottom {
-    position: fixed;
-    bottom: 30px;
+.chatroom {
+
 }
 
 .chat-row {

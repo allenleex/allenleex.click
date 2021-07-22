@@ -1,35 +1,33 @@
-{% extends "layouts/base-fullscreen.html" %}
+{% extends "layouts/base.html" %}
 
-{% block title %} Login {% endblock %}
+{% block title %} Chat {% endblock %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
 
 {% block content %}
 
-<div class="container">
-    <div class="row" style="margin-top: 80px;">
-        <div class="col-md-3 text-left"></div>
-        <div class="col-md-6 text-left scrollbar-black bordered-black thin" id="chatroom-wrapper">
-            <div id="chatroom"></div>
-        </div>
-        <div class="col-md-3 text-left">
-            <div id="tags" class="form-group"></div>
-        </div>
-    </div>
-</div>
-
-<div class="container fixed-bottom">
-    <div class="row">
-        <div class="col-md-3 text-center"></div>
-        <div class="col-md-6 text-left">
-            <div class="form-group">
-                <input id="keyword" type="text" class="form-control" placeholder="输入一段话" autocomplete="off" value="">
-                <!--                    <div class="custom-control custom-checkbox" style="margin-top: 10px; margin-left: 10px;">-->
-                <!--                        <input type="checkbox" class="custom-control-input" id="customCheck1">-->
-                <!--                        <label class="custom-control-label" for="customCheck1">过滤无意义的字词</label>-->
-                <!--                    </div>-->
+<div class="main-body">
+    <div class="container-fluid">
+        <div class="row" style="margin-top: 80px;">
+            <div class="col-md-8 text-left" id="chatroom-wrapper">
+                <div class="form-group">
+                    <input id="keyword" type="text" class="form-control" placeholder="输入一段话" autocomplete="off" value="">
+                </div>
+                <div id="chatroom"></div>
+            </div>
+            <div class="col-md-4 text-left">
+                <div id="tags" class="form-group"></div>
             </div>
         </div>
-        <div class="col-md-3 text-center"></div>
     </div>
+<!--    <div class="container-fluid fixed-bottom">-->
+<!--        <div class="row">-->
+<!--            <div class="col-md-9 text-left">-->
+<!--            </div>-->
+<!--            <div class="col-md-3 text-center"></div>-->
+<!--        </div>-->
+<!--    </div>-->
 </div>
 
 <script src="/static/assets/js/chat.js"></script>

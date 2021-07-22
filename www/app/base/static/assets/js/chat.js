@@ -9,9 +9,9 @@ function jieba() {
         urlWords,
         { keyword: k },
         function(json,status){
-            console.log(json);
             var data = json.data;
             if(data){
+                console.log(json);
                 $("#tags").empty();
                 for(i in data) {
                     $("#tags").append('<button class="badge">' + data[i] + '</button>');
@@ -42,7 +42,7 @@ function answer(question) {
 function autoHeight() {
     var h = $(window).height();
     if (h > 100) {
-        $("#chatroom-wrapper").css('height', h-200);
+        $("#chatroom-wrapper").css('height', h-120);
     } else {
         return false;
     }
@@ -50,22 +50,50 @@ function autoHeight() {
 
 
 $(document).ready(function(){
-    autoHeight();
-    $(window).resize(autoHeight);
+    // autoHeight();
+    // $(window).resize(autoHeight);
     focus();
 
-    /*
-    post('123', 0);
-    post('收到', 1);
-    post('123', 0);
-    post('收到', 1);
-    post('123', 0);
-    post('收到', 1);
-    post('123', 0);
-    post('收到', 1);
-    post('123', 0);
-    post('收到', 1);
-    */
+//    post('123', 0);
+//    post('收到', 1);
+//    post('123', 0);
+//    post('收到', 1);
+//    post('123', 0);
+//    post('收到', 1);
+//    post('123', 0);
+//    post('收到', 1);
+//    post('123', 0);
+//    post('收到', 1);
+//    post('123', 0);
+//    post('收到', 1);
+//    post('123', 0);
+//    post('收到', 1);
+//    post('123', 0);
+//    post('收到', 1);
+//    post('123', 0);
+//    post('收到', 1);
+//    post('123', 0);
+//    post('收到', 1);
+//    post('123', 0);
+//    post('收到', 1);
+//    post('123', 0);
+//    post('收到', 1);
+//    post('123', 0);
+//    post('收到', 1);
+//    post('123', 0);
+//    post('收到', 1);
+//    post('123', 0);
+//    post('收到', 1);
+//    post('123', 0);
+//    post('收到', 1);
+//    post('123', 0);
+//    post('收到', 1);
+//    post('123', 0);
+//    post('收到', 1);
+//    post('123', 0);
+//    post('收到', 1);
+//    post('123', 0);
+//    post('收到', 1);
 });
 
 $(document).keyup(function(e){
