@@ -17,6 +17,7 @@ jieba.add_word('石墨烯')
 jieba.add_word('凱特琳')
 jieba.del_word('自定义词')
 
+
 @blueprint.route('/api/test')
 def test():
     return 'test api'

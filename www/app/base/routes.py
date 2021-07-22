@@ -99,7 +99,7 @@ def logout():
 
 @blueprint.route('/chat', methods=['GET', 'POST'])
 def chat():
-    return render_template('chat.html')
+    return render_template('chat.html', segment='chat')
     # return redirect(url_for('base_blueprint.chat'))
     # return 'hello world'
 
