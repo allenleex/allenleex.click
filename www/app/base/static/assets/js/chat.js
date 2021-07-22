@@ -16,6 +16,7 @@ function jieba() {
                 for(i in data) {
                     $("#tags").append('<button class="badge">' + data[i] + '</button>');
                 }
+                $("#tagNum").html("（共" + data.length + "个）");
             }
         }
     );
@@ -53,45 +54,8 @@ $(document).ready(function(){
     // autoHeight();
     // $(window).resize(autoHeight);
     focus();
+    getNumbers();
 
-//    post('123', 0);
-//    post('收到', 1);
-//    post('123', 0);
-//    post('收到', 1);
-//    post('123', 0);
-//    post('收到', 1);
-//    post('123', 0);
-//    post('收到', 1);
-//    post('123', 0);
-//    post('收到', 1);
-//    post('123', 0);
-//    post('收到', 1);
-//    post('123', 0);
-//    post('收到', 1);
-//    post('123', 0);
-//    post('收到', 1);
-//    post('123', 0);
-//    post('收到', 1);
-//    post('123', 0);
-//    post('收到', 1);
-//    post('123', 0);
-//    post('收到', 1);
-//    post('123', 0);
-//    post('收到', 1);
-//    post('123', 0);
-//    post('收到', 1);
-//    post('123', 0);
-//    post('收到', 1);
-//    post('123', 0);
-//    post('收到', 1);
-//    post('123', 0);
-//    post('收到', 1);
-//    post('123', 0);
-//    post('收到', 1);
-//    post('123', 0);
-//    post('收到', 1);
-//    post('123', 0);
-//    post('收到', 1);
 //    post('123', 0);
 //    post('收到', 1);
 });
@@ -124,14 +88,41 @@ function post(str="...", type=0) {
     var p = '';
     var c = '<div class="clear"></div>';
     if( type==0 )
-        p = '<div class="chat-row"><div class="chat left">' + s + '</div></div>';
+        p = '<div class="chat-row"><div class="chat left" onclick="copyToKeyword(this)">' + s + '</div></div>';
     else
-        p = '<div class="chat-row"><div class="chat right">' + s + '</div></div>';
+        p = '<div class="chat-row"><div class="chat right" onclick="copyToKeyword(this)">' + s + '</div></div>';
     $("#chatroom").prepend(p);
     $("#chatroom").prepend(c);
-    $("#keyword").val('');
+    clearInput();
 }
 
 function focus() {
     $("#keyword").focus();
+}
+
+function getNumbers() {
+    var url = '/api/num/tingyongci';
+
+    $.get(url,function(data,status){
+        $("#num_tingyongci").html(data);
+    });
+}
+
+function clearInput() {
+    $("#keyword").val('');
+    focus();
+}
+
+function clearChat() {
+    $("#chatroom").empty();
+    focus();
+}
+
+function clearTags() {
+    $("#tags").empty();
+    focus();
+}
+
+function copyToKeyword(e) {
+    $("#keyword").val($(e).html());
 }

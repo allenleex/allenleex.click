@@ -88,3 +88,9 @@ def move_stopwords(sentence_list, stopwords_list):
 #     answer = chatbot.get_response(question)
 #
 #     return answer
+
+@blueprint.route('/api/num/tingyongci')
+def num_tingyongci():
+
+    return "123"
+

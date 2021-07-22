@@ -10632,6 +10632,10 @@ div.code-toolbar > .toolbar span:hover {
 
 /** Custom Styles **/
 
+hr {
+    border-top: 1px solid #444444;
+}
+
 .fixed-bottom {
     position: fixed;
     left: 264px;
@@ -10705,3 +10709,19 @@ button.badge:focus {
 .clear {
     clear:both;
 }
+
+.btn-group button {
+    background: #333333;
+    color: #f0f0f0;
+    border: 1px solid #444444;
+}
+
+.btn-group button:hover,
+.btn-group button:focus {
+    border: 1px solid #04a9f5;
+}
+
+.text-gray {
+    color: #888888;
+}
+

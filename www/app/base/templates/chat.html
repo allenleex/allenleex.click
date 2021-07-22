@@ -14,20 +14,47 @@
                 <div class="form-group">
                     <input id="keyword" type="text" class="form-control" placeholder="输入一段话" autocomplete="off" value="">
                 </div>
+                <div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
+                    <button type="button" class="btn btn-default" onclick="clearInput();">清空输入框</button>
+                    <button type="button" class="btn btn-default" onclick="clearChat();">清空对话记录</button>
+                    <button type="button" class="btn btn-default" onclick="clearTags();">清空关键字</button>
+                </div>
+                <hr>
+                <div class="text-center text-gray"><small>以下是人机对话内容</small></div>
                 <div id="chatroom"></div>
             </div>
             <div class="col-md-4 text-left">
-                <div id="tags" class="form-group"></div>
+                <!--停用词数量-->
+                <div class="card">
+                    <div class="card-block">
+                        <h6 class="mb-4">停用词数量</h6>
+                        <div class="row d-flex align-items-center">
+                            <div class="col-12">
+                                <h3 class="f-w-300 d-flex align-items-center m-b-0">
+                                    <i class="feather icon-arrow-up text-c-green f-30 m-r-10"></i>
+                                    <span id="num_tingyongci"></span>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--分词标签-->
+                <div class="card">
+                    <div class="card-block">
+                        <h6 class="mb-4">关键字<span id="tagNum"></span></h6>
+                        <div id="tags" class="form-group"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-<!--    <div class="container-fluid fixed-bottom">-->
-<!--        <div class="row">-->
-<!--            <div class="col-md-9 text-left">-->
-<!--            </div>-->
-<!--            <div class="col-md-3 text-center"></div>-->
-<!--        </div>-->
-<!--    </div>-->
+    <!--    <div class="container-fluid fixed-bottom">-->
+    <!--        <div class="row">-->
+    <!--            <div class="col-md-9 text-left">-->
+    <!--            </div>-->
+    <!--            <div class="col-md-3 text-center"></div>-->
+    <!--        </div>-->
+    <!--    </div>-->
 </div>
 
 <script src="/static/assets/js/chat.js"></script>
